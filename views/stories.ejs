@@ -1,0 +1,87 @@
+<%- include('./partials/head') %>
+
+<header class="header-stories">
+    <a title="lessons page" href="/lessons">
+        <img src="../images/back-bttn.png" alt="back">
+    </a>
+    <h1>All stories</h1>
+</header>
+
+<section class="search-container">
+    <div class="search-box">
+        <img src="../images/search.png">
+        <input type="text" id="input" placeholder="Search for stories" aria-label="search">
+    </div>
+
+    <div class="search-selectors"></div>
+</section>
+
+<ul class="stories">
+    <% stories.forEach(story => { %>
+    <li>
+        <img class="story-img" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="story image">
+
+        <div class="story-content">
+            <div class="story-title">
+                <h3> <%= story.title %> </h3>
+                <img class="flag-img" src="../images/english.svg" alt="flag">
+            </div>
+            <p><%= story.summary.slice(0, story.summary.length/2) %>...</p>
+            <div class="story-links">
+                <div class="audio-info">
+                    <button>
+                        <img src="../images/play-blue.svg" alt="play button">
+                    </button>
+                    <p>3 min. 5 sec</p>
+                </div>
+                <div class="add-options">
+                    <button>
+                        <img src="../images/cloud.svg" alt="download button">
+                    </button>
+                    <button>
+                        <img src="../images/add-button.svg" alt="add button">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </li>
+    <% }) %>
+</ul>
+
+<!--
+
+<ul class="stories-content">
+    <% stories.forEach(story => { %>
+    <li>
+        <img class="story-img" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="story image">
+        <div class="story-content">
+            <div class="story-title">
+                <h3> <%= story.title %> </h3>
+                <img class="flag-img" src="../images/english.svg" alt="flag">
+            </div>
+            <p><%= story.summary.slice(0, story.summary.length/2) %>...</p>
+            <div class="story-links">
+                <div class="audio-info">
+                    <button>
+                        <img src="../images/play-blue.svg" alt="play button">
+                    </button>
+                    <p>3 min. 5 sec</p>
+                </div>
+                <div class="add-options">
+                    <button>
+                        <img src="../images/cloud.svg" alt="download button">
+                    </button>
+                    <button>
+                        <img src="../images/add-button.svg" alt="add button">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </li>
+        <% }) %>
+</ul> -->
+
+
+
+
+<%- include('./partials/foot') %>
