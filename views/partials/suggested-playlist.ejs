@@ -6,14 +6,14 @@
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder playlist">
+                <img loading="lazy" src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder playlist">
             </picture>
 
             <h3> <%= playlist.title %> </h3>
             <div class="playlist-options"> <!--laatste regel-->
                 <div class="audio-info">
                     <a>
-                        <img src="../images/play-orange.svg" alt="play-button">
+                        <img loading="lazy" src="../images/play-orange.svg" alt="play-button">
                     </a>
                     <p>31 min. 55 sec</p>
                 </div>
@@ -21,11 +21,11 @@
                 <form method="POST" action="/<%= playlist.id %>/like-or-unlike" class="like-or-unlike-playlist">
                     <% if (!favorites[playlist.id]) { %>
                         <button title="like playlist" type="submit" name="actie" value="like">
-                            <img src="../images/heart.svg" alt="red heart">
+                            <img loading="lazy" src="../images/heart.svg" alt="red heart">
                         </button>
                     <% } else { %>
                         <button title="unlike playlist" type="submit" name="actie" value="unlike">
-                            <img src="../images/solid-heart.svg" alt="empty heart">
+                            <img loading="lazy" src="../images/solid-heart.svg" alt="empty heart">
                         </button>
                     <% } %>
                 </form>

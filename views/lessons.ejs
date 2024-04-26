@@ -55,7 +55,7 @@
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/<%= language.flag %>" onerror="this.onerror=null; this.src='../images/checkered-flag.png'" alt="placeholder flag">
+                <img loading="lazy" src="https://fdnd-agency.directus.app/assets/<%= language.flag %>" onerror="this.onerror=null; this.src='../images/checkered-flag.png'" alt="placeholder flag">
             </picture>
             <h3> <%= language.language %> </h3>
         </button>
@@ -72,27 +72,27 @@
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>?format=webp" type="image/webp">
-                <img class="story-img" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder story">
+                <img loading="lazy" class="story-img" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder story">
             </picture>
             <div class="story-content">
                 <div class="story-title">
                     <h3> <%= story.title %> </h3>
-                    <img class="flag-img" src="../images/english.svg" alt="flag">
+                    <img loading="lazy" class="flag-img" src="../images/english.svg" alt="flag">
                 </div>
                 <p><%= story.summary.slice(0, story.summary.length/2) %>...</p>
                 <div class="story-links">
                     <div class="audio-info">
                         <button>
-                            <img src="../images/play-blue.svg" alt="play button">
+                            <img loading="lazy" src="../images/play-blue.svg" alt="play button">
                         </button>
                         <p>3 min. 5 sec</p>
                     </div>
                     <div class="add-options">
                         <button>
-                            <img src="../images/cloud.svg" alt="download button">
+                            <img loading="lazy" src="../images/cloud.svg" alt="download button">
                         </button>
                         <button>
-                            <img src="../images/add-button.svg" alt="add button">
+                            <img loading="lazy" src="../images/add-button.svg" alt="add button">
                         </button>
                     </div>
                 </div>
@@ -112,18 +112,18 @@
         <picture>
             <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>?format=avif" type="image/avif">
             <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>?format=webp" type="image/webp">
-            <img src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder playlist">
+            <img loading="lazy" src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder playlist">
         </picture>
         <h3> <%= playlist.title %> </h3>
         <div class="playlist-options"> <!--laatste regel-->
             <div class="audio-info">
                 <a>
-                    <img src="../images/play-orange.svg" alt="play-button">
+                    <img loading="lazy" src="../images/play-orange.svg" alt="play-button">
                 </a>
                 <p>31 min. 55 sec</p>
             </div>
             <button>
-                <img src="../images/heart.svg" alt="heart">
+                <img loading="lazy" src="../images/heart.svg" alt="heart">
             </button>
         </div>  
     </li>
