@@ -2,10 +2,7 @@
 
 <%- include('./partials/navigation') %>
 
-<!-- <header>
-    <img src="../images/pinguin.svg">
-    <h1>TuMi Mundo</h1>
-</header> -->
+
 
 <header>
     <h1>Lessons</h1>
@@ -15,7 +12,7 @@
 <ol>
     <li class="phases">
         <a href="#" aria-label="" >Listening</a>
-        <img src="../images/music-note.svg" alt="music note" width="25">
+        <img src="../images/music-note.svg" alt="music note">
     </li>
 </ol>
 
@@ -23,7 +20,7 @@
 <h2>Own playlist</h2>
 <section class="playlists">
     <button class="new-playlist">
-        <img src="../images/add.svg" alt="plus sign" width="35">
+        <img src="../images/add.svg" alt="plus sign">
             <h3>Make a playlist!</h3>
             <p>Add your favorite stories in one playlist</p>
     </button>
@@ -31,11 +28,15 @@
     <ul class="playlists-content">
         <% stories.slice(2, 3).forEach(story => { %>
         <li>
-            <img src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="playlist image" width="100">
+            <picture>
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/webp">
+                <img src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="playlist image">
+            </picture>
             <h3> <%= story.title %> </h3>
             <div class="audio-info">
                 <a href="home/playlist">
-                    <img src="../images/play-orange.svg" alt="play-button" width="25">
+                    <img src="../images/play-orange.svg" alt="play-button">
                 </a>
                 <p>31 min. 55 sec</p>
             </div>
@@ -51,7 +52,11 @@
         <!--hier mee selecteer ik alleen de eerste 2 languages uit de directus API-->
         <% languages.slice(0, 2).forEach(language => { %>
         <button class="languages">
-            <img src="https://fdnd-agency.directus.app/assets/<%= language.flag %>" onerror="this.onerror=null; this.src='../images/checkered-flag.png'" alt="placeholder flag" width="20">
+            <picture>
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>" type="image/webp">
+                <img src="https://fdnd-agency.directus.app/assets/<%= language.flag %>" onerror="this.onerror=null; this.src='../images/checkered-flag.png'" alt="placeholder flag">
+            </picture>
             <h3> <%= language.language %> </h3>
         </button>
         <% }) %>
@@ -64,26 +69,30 @@
         <!-- Totaal items in stories / 3 = een waarde deze naar boven afronden en die waarde meegeven als css variable -->
         <% stories.forEach(story => { %>
         <li>
-            <img class="story-img" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder story" width="70">
+            <picture>
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/webp">
+                <img class="story-img" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder story">
+            </picture>
             <div class="story-content">
                 <div class="story-title">
                     <h3> <%= story.title %> </h3>
-                    <img class="flag-img" src="../images/english.svg" alt="flag" width="20">
+                    <img class="flag-img" src="../images/english.svg" alt="flag">
                 </div>
                 <p><%= story.summary.slice(0, story.summary.length/2) %>...</p>
                 <div class="story-links">
                     <div class="audio-info">
                         <button>
-                            <img src="../images/play-blue.svg" alt="play button" width="20">
+                            <img src="../images/play-blue.svg" alt="play button">
                         </button>
                         <p>3 min. 5 sec</p>
                     </div>
                     <div class="add-options">
                         <button>
-                            <img src="../images/cloud.svg" alt="download button" width="20">
+                            <img src="../images/cloud.svg" alt="download button">
                         </button>
                         <button>
-                            <img src="../images/add-button.svg" alt="add button" width="20">
+                            <img src="../images/add-button.svg" alt="add button">
                         </button>
                     </div>
                 </div>
@@ -100,17 +109,21 @@
 <ul class="playlists-content">
     <% playlists.forEach(playlist => { %>
     <li>
-        <img src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder story" width="100">
+        <picture>
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" type="image/avif">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" type="image/webp">
+            <img src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder playlist">
+        </picture>
         <h3> <%= playlist.title %> </h3>
         <div class="playlist-options"> <!--laatste regel-->
             <div class="audio-info">
                 <a>
-                    <img src="../images/play-orange.svg" alt="play-button" width="20">
+                    <img src="../images/play-orange.svg" alt="play-button">
                 </a>
                 <p>31 min. 55 sec</p>
             </div>
             <button>
-                <img src="../images/heart.svg" alt="heart" width="20">
+                <img src="../images/heart.svg" alt="heart">
             </button>
         </div>  
     </li>
@@ -118,49 +131,11 @@
 </ul>
 
 <!-- section 5: suggested playlist -->
-<h2>Suggested playlist</h2> 
-<ul id="suggested-playlist" class="playlists-content">
-    <% playlists.forEach(playlist => { %>
-    <li>
-        <img src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder story" width="100">
-        <h3> <%= playlist.title %> </h3>
-        <div class="playlist-options"> <!--laatste regel-->
-            <div class="audio-info">
-                <a>
-                    <img src="../images/play-orange.svg" alt="play-button" width="20">
-                </a>
-                <p>31 min. 55 sec</p>
-            </div>
-
-            <form method="POST" action="/<%= playlist.id %>/like-or-unlike">
-                <% if (!favorites[playlist.id]) { %>
-                    <button title="like playlist" type="submit" name="action" value="like">
-                        <img src="../images/heart.svg" alt="red heart" width="20">
-                    </button>
-                <% } else { %>
-                    <button title="unlike playlist" type="submit" name="action" value="unlike">
-                        <img src="../images/solid-heart.svg" alt="empty heart" width="20">
-                    </button>
-                <% } %>
-            </form>
-           
-        </div> 
-        
-    </li>
-    <% }) %>
-</ul>
-
-
-<% playlists.forEach(playlist => { %>
-<% if (likedPlaylist["liked-playlist"] == playlist.id) { %>
-    <text>De playlist is succesvol toegevoegd!</text>
-<% } %> 
-<% }) %>
+<%- include('./partials/suggested-playlist') %>
 
 
 
-
-
-
+hallo
 
 <%- include('./partials/foot') %>
+
