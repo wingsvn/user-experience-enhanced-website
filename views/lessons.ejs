@@ -29,8 +29,8 @@
         <% stories.slice(2, 3).forEach(story => { %>
         <li>
             <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/webp">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>?format=avif" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>?format=webp" type="image/webp">
                 <img src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="playlist image">
             </picture>
             <h3> <%= story.title %> </h3>
@@ -53,8 +53,8 @@
         <% languages.slice(0, 2).forEach(language => { %>
         <button class="languages">
             <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>" type="image/webp">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>?format=avif" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= language.flag %>?format=webp" type="image/webp">
                 <img src="https://fdnd-agency.directus.app/assets/<%= language.flag %>" onerror="this.onerror=null; this.src='../images/checkered-flag.png'" alt="placeholder flag">
             </picture>
             <h3> <%= language.language %> </h3>
@@ -70,8 +70,8 @@
         <% stories.forEach(story => { %>
         <li>
             <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>" type="image/webp">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>?format=avif" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= story.image %>?format=webp" type="image/webp">
                 <img class="story-img" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder story">
             </picture>
             <div class="story-content">
@@ -110,8 +110,8 @@
     <% playlists.forEach(playlist => { %>
     <li>
         <picture>
-            <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" type="image/avif">
-            <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" type="image/webp">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>?format=avif" type="image/avif">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= playlist.image %>?format=webp" type="image/webp">
             <img src="https://fdnd-agency.directus.app/assets/<%= playlist.image %>" onerror="this.onerror=null; this.src='../images/penguin-story.svg'" alt="placeholder playlist">
         </picture>
         <h3> <%= playlist.title %> </h3>
